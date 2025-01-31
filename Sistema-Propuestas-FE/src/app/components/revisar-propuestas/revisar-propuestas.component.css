@@ -1,0 +1,93 @@
+/* Estilo de los botones */
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.btn-success i {
+  font-size: 1.25rem;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Card y borde */
+.card {
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.card-header {
+  background-color: #17a2b8; /* Azul Claro */
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Inputs y selects */
+.form-control, .form-select {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 0 0.25rem rgba(23, 162, 184, 0.25);
+}
+
+/* Estilo para el formulario */
+.form-label {
+  font-weight: bold;
+}
+
+/* Color Azul Oscuro */
+.text-dark-blue {
+  color: #003366 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Sombra en el card */
+.card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.button-custom {
+  height: auto;
+  width: 75px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #0D6EFD;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+}

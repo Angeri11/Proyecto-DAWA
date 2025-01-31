@@ -1,0 +1,102 @@
+/* Estilo para el fondo y contenedor */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Color Azul Oscuro */
+.text-dark-blue {
+  color: #003366 !important;
+}
+
+/* Tarjeta con sombra */
+.card {
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.card-header {
+  background-color: #17a2b8; /* Azul Claro */
+  border-radius: 0.5rem 0.5rem 0 0;
+  text-align: center; /* Centrar el título */
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Estilo de los inputs */
+.form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 0 0.25rem rgba(23, 162, 184, 0.25);
+}
+
+/* Botones */
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Títulos y etiquetas */
+h3, .form-label {
+  font-weight: bold;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.text-info {
+  color: #17a2b8;
+}
+
+/* Margen de los botones */
+.d-flex {
+  margin-top: 1rem;
+}
+
+/* Card shadow */
+.card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Centrar los botones */
+.text-center {
+  text-align: center;
+}
+
+/* Asegurarse de que los botones tengan el mismo tamaño y margen */
+.w-45 {
+  width: 45%;
+  margin: 0 2% 0 2%; /* Espaciado entre los botones */
+}

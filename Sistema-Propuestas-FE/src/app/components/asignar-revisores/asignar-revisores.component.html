@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4" style="background: linear-gradient(to bottom, #e3f2fd, #ffffff);">
+    <div class="card-header bg-info text-white text-center rounded-top">
+      <h2 class="fw-bold">{{id == 0 ? 'Registrar' : 'Editar'}} Revisores</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Datos del Revisor -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre" class="form-label fw-semibold text-dark-blue">Nombre</label>
+            <input type="text" class="form-control border border-info rounded-pill" id="nombre" placeholder="Ingrese el nombre" formControlName="nombres">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="apellido" class="form-label fw-semibold text-dark-blue">Apellido</label>
+            <input type="text" class="form-control border border-info rounded-pill" id="apellido" placeholder="Ingrese el apellido" formControlName="apellidos">
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cedula" class="form-label fw-semibold text-dark-blue">Cédula</label>
+            <input type="text" class="form-control border border-info rounded-pill" id="cedula" placeholder="Ingrese la cédula" formControlName="cedula">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="correo" class="form-label fw-semibold text-dark-blue">Correo Electrónico</label>
+            <input type="email" class="form-control border border-info rounded-pill" id="correo" placeholder="Ingrese el correo electrónico" formControlName="correo">
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success btn-lg rounded-pill shadow-lg px-4 me-2">{{ id == 0 ? 'Guardar' : 'Editar'}} Revisor</button>
+          <button type="button" class="btn btn-secondary btn-lg rounded-pill shadow-lg px-4" (click)="onCancel()">Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Tabla de Revisores Registrados -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4 text-dark-blue">Revisores Registrados</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-info">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cédula</th>
+                <th>Correo Electrónico</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of revisores; track $index) {
+                <tr>
+                  <td>{{ item.nombres }}</td>
+                  <td>{{ item.apellidos }}</td>
+                  <td>{{ item.cedula }}</td>
+                  <td>{{ item.correo }}</td>
+                  <td>
+                    <button class="button-custom" (click)="setData(item)">Editar</button>
+                    <button class="button-custom bg-danger ms-2" (click)="eliminar(item.id!)">Eliminar</button>
+                  </td>
+                </tr>
+              }            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

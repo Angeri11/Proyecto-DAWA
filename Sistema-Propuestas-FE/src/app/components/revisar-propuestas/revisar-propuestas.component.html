@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <!-- Sección de Búsqueda -->
+  <!-- <div class="card shadow-lg mb-4" style="background: linear-gradient(to bottom, #e3f2fd, #ffffff);">
+    <div class="card-header bg-info text-white">
+      <h3 class="fw-bold mb-0">Búsqueda de Propuestas</h3>
+    </div>
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label fw-semibold text-dark-blue">Nombre de la Propuesta</label>
+          <input type="text" class="form-control" placeholder="Buscar por nombre...">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-semibold text-dark-blue">Cédula Estudiante</label>
+          <input type="text" class="form-control" placeholder="Buscar por cédula...">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-semibold text-dark-blue">Fecha</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button class="btn btn-primary w-100">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Tabla de Propuestas -->
+  <div class="card shadow-lg mb-4">
+    <div class="card-header bg-info text-white">
+      <h3 class="fw-bold mb-0">Lista de Propuestas</h3>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Nombre de Propuesta</th>
+              <th>Estudiante</th>
+              <th>Cédula</th>
+              <th>Fecha Registro</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of propuestas; track $index) {
+              <tr>
+                <td>{{ item.nombrePropuesta }}</td>
+                <td>{{ item.nombreEstudiante }}</td>
+                <td>{{ item.cedulaEstudiante }}</td>
+                <td>{{ item.fechaRegistro | date: "dd-MM-yyy" }}</td>
+                <td><span class="badge bg-success">{{ item.estado }}</span></td>
+                <td>
+                  <button class="button-custom" (click)="aceptar(item.id!)">Aceptar</button>
+                  <button class="button-custom bg-danger ms-2" (click)="rechazar(item.id!)">Rechazar</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

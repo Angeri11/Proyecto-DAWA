@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white text-center rounded-top">
+      <h2 class="fw-bold">{{id == 0 ? 'Registrar' : 'Editar'}} Propuesta</h2>
+    </div>
+    <div class="card-body"> 
+      <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+        <!-- Nombre de la Propuesta -->
+        <div class="mb-3">
+          <label for="proposalName" class="form-label fw-semibold text-dark-blue">Nombre de la Propuesta</label>
+          <input type="text" class="form-control border border-info rounded-pill" id="proposalName" placeholder="Ingrese el nombre de la propuesta" formControlName="nombrePropuesta">
+        </div>        
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-dark-blue">Estudiante</label>
+          <div class="row mb-2">
+            <div class="col-md-4">
+              <input type="text" class="form-control border border-info rounded-pill" id="studentName1" placeholder="Nombre del estudiante" formControlName="nombreEstudiante">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control border border-info rounded-pill" id="studentId1" placeholder="Cédula del estudiante" formControlName="cedulaEstudiante">
+            </div>
+            <div class="col-md-4">
+              <input type="date" class="form-control border border-info rounded-pill" id="studentDate1" formControlName="fechaRegistro">
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success btn-lg rounded-pill shadow-lg px-4 me-2">{{ id == 0 ? 'Guardar' : 'Editar'}} Propuesta</button>
+          <button type="button" class="btn btn-secondary btn-lg rounded-pill shadow-lg px-4" (click)="onCancel()">Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Tabla de Propuestas -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4 text-dark-blue">Propuestas Registradas</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>Nombre de Propuesta</th>
+                <th>Nombre Estudiante</th>
+                <th>Cédula</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of propuestas; track $index) {
+                <tr>
+                  <td>{{ item.nombrePropuesta }}</td>
+                  <td>{{ item.nombreEstudiante }}</td>
+                  <td>{{ item.cedulaEstudiante }}</td>
+                  <td>{{ item.fechaRegistro | date: "dd-MM-yyy" }}</td>
+                  <td><span class="badge bg-success">{{ item.estado }}</span></td>
+                  <td>
+                    <button class="button-custom" (click)="setData(item)">Editar</button>
+                    <button class="button-custom bg-danger ms-2" (click)="eliminar(item.id!)">Eliminar</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
